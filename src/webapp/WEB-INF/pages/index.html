@@ -6,15 +6,9 @@
     <title>Index</title>
 </head>
 <body>
-<!--<div style="color:mediumspringgreen">-->
-<!--   <th:block th:each="msg : ${messages}">-->
-<!--        <h1 th:text="${msg}"></h1>-->
-<!--    </th:block>-->
-<!--</div>-->
-
-<div th:each="users: ${users}">
-   <a th:href="@{/users/{id}(id=${users.getId()})}"
-      th:text="${users.getName()+','+users.getEmail()}">users</a>
+<div th:each="us: ${user}">
+   <a th:href="@{/users/{id}(id=${us.getId()})}"
+      th:text="${us.getName()+','+us.getEmail()}">users</a>
 </div>
 <a style="color: red " href="/users/new">Создать нового пользователя</a>
 </body>

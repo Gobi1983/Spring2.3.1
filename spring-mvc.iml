@@ -9,10 +9,11 @@
           <factory-entry name="entityManagerFactory" value="e2a95c39-623c-4783-b1de-1f863e0cddb4" />
           <factory-entry name="spring-mvc" value="e2a95c39-623c-4783-b1de-1f863e0cddb4" />
         </datasource-mapping>
-        <naming-strategy-map>
-          <unit-entry name="spring-mvc" />
-        </naming-strategy-map>
+        <naming-strategy-map />
       </configuration>
+    </facet>
+    <facet type="Spring" name="Spring">
+      <configuration />
     </facet>
   </component>
 </module>

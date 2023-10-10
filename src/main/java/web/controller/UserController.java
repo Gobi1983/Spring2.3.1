@@ -21,11 +21,11 @@ public class UserController {
 
     @GetMapping()
     public String index(Model model) {
-        model.addAttribute("users", userService.findAll());
+        model.addAttribute("user", userService.findAll());
         return "index";
     }
     @GetMapping("/{id}")
-    public String show(@PathVariable("id") int id, Model model) {
+    public String show(Model model,@PathVariable("id") int id) {
         model.addAttribute("user", userService.findOne(id));
         return "show";
     }
@@ -52,8 +52,8 @@ public class UserController {
     }
 
     @PatchMapping("/{id}")
-    public String update(@ModelAttribute("user") @Valid User user, BindingResult bindingResult,
-                         @PathVariable("id") int id) {
+    public String update(@PathVariable("id") int id, @ModelAttribute("user") @Valid User user, BindingResult bindingResult
+                         ) {
         if (bindingResult.hasErrors()) {
             return "edit";
         }
